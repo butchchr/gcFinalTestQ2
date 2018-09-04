@@ -26,5 +26,15 @@ namespace FinalTestQ2.Controllers
 
             return View();
         }
+
+        public ActionResult CustomerView()
+        {
+            return View();
+        }
+
+        public ActionResult OrdersView()
+        {
+            return View();
+        }
     }
 }
