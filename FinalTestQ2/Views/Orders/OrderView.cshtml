@@ -1,4 +1,11 @@
-﻿@model IEnumerable<Order>
+﻿@model IEnumerable<FinalTestQ2.Order>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -6,29 +13,29 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.EmployeeID)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.OrderDate)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ShipCity)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OrderID)
-        </th>
-        <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.EmployeeID)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.OrderDate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ShipCity)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderID)
-            </td>
+
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.OrderID }) |
                 @Html.ActionLink("Details", "Details", new { id = item.OrderID }) |

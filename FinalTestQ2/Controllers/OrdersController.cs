@@ -120,6 +120,13 @@ namespace FinalTestQ2.Controllers
             return RedirectToAction("Index");
         }
 
+        // GET: Orders
+        public ActionResult OrderView()
+        {
+            var orders = db.Orders.Include(o => o.Customer);
+            return View(orders.ToList());
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

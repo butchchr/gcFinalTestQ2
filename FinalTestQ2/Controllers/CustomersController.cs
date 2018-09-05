@@ -115,6 +115,11 @@ namespace FinalTestQ2.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult CustomerView()
+        {
+            return View(db.Customers.ToList());
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
